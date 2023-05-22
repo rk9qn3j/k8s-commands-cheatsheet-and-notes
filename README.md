@@ -19,11 +19,10 @@ apt-get madison PACKAGE                 # List available packages in the repo
 # VIM
 ```
 ~/.vimrc
-  set tabstop=2
-  set expandtab
-  set shiftwidth=2
-  set number
-  syntax on
+set tabstop=2
+set expandtab
+set shiftwidth=2
+syntax on
 ```
 # Aliases
 ```
