@@ -16,7 +16,7 @@ apt list --installed | grep kubeadm     # List installed packages named kubeadm
 
 apt-get madison PACKAGE                 # List available packages in the repo
 ```
-# VIM
+# Vim
 ```
 ~/.vimrc
 set tabstop=2
@@ -24,6 +24,18 @@ set expandtab
 set shiftwidth=2
 syntax on
 ```
+
+OR
+
+```
+cat <<EOF | tee ~/.vimrc
+set tabstop=2
+set expandtab
+set shiftwidth=2
+syntax on
+EOF
+```
+
 # Aliases
 ```
 alias k='kubectl'
