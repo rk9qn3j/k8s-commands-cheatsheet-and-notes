@@ -735,3 +735,22 @@ kubectl cordon HOSTNAME
 ```
 kubectl uncordon HOSTNAME
 ```
+
+
+
+## Helm
+
+**Get default Helm values for a release**
+```sh
+helm show values external-dns/external-dns
+```
+
+**Get current Helm values for a release**
+```sh
+helm get values -n externaldns external-dns
+```
+
+**Search repo for specific keyword (which also list chart verions)**
+```sh
+helm search repo external-dns -l
+```
