@@ -736,10 +736,7 @@ kubectl cordon HOSTNAME
 kubectl uncordon HOSTNAME
 ```
 
-
-
 ## Helm
-
 **Get default Helm values for a release**
 ```sh
 helm show values external-dns/external-dns
@@ -753,4 +750,22 @@ helm get values -n externaldns external-dns
 **Search repo for specific keyword (which also list chart verions)**
 ```sh
 helm search repo external-dns -l
+```
+
+## Pods
+**Scale/restart deploy (also works with ReplicaSet, StatefulSet, DaemonSet etc.)**
+```sh
+kubectl scale deployment deployment --replicas=0            # Set replicas to zero, which will terminate
+kubectl scale deployment deployment --replicas=3            # Restore
+
+OR
+
+kubectl rollout restart deployment/deploymentname           # E.g. restart deployment
+```
+
+## Cluster specific commands 
+**List cluster resources**
+```sh
+kubectl api-resources
+kubectl api-resources --namespaced                          # Show only namespaced resources
 ```
