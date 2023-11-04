@@ -95,8 +95,8 @@ kubectl get namespace,node,ingress,pod,svc,job,cronjob,deployment,rs,pv,pvc,secr
 # Readyness and liveness probes
 Check state through command execution, HTTP GET or TCP.
 
-* Readyness = Restarts the POD if state check is failed.
-* Liveness = Doesn't serve traffic to the POD if state check is failed
+* Readyness = Doesn't serve traffic to the pod, if state check has failed.
+* Liveness (HTTP, command or TCP) = Restarts the pod, if state check is failed.
 
 # Export YAML
 ```
@@ -736,6 +736,11 @@ kubectl cordon HOSTNAME
 kubectl uncordon HOSTNAME
 ```
 
+**List pods by nodes alphabetically (desc.)**
+```sh
+kubectl get pods -o wide --sort-by="{.spec.nodeName}"
+```
+
 ## Helm
 **Get default Helm values for a release**
 ```sh
@@ -769,3 +774,11 @@ kubectl rollout restart deployment/deploymentname           # E.g. restart deplo
 kubectl api-resources
 kubectl api-resources --namespaced                          # Show only namespaced resources
 ```
+
+## Nova
+
+**Find Helm releases that are not up-to-date**
+```sh
+nova find --show-old --format table
+```
+
