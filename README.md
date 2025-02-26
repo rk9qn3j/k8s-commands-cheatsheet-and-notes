@@ -782,3 +782,10 @@ kubectl api-resources --namespaced                          # Show only namespac
 nova find --show-old --format table
 ```
 
+## ksniff
+Source: https://github.com/eldadru/ksniff, https://tshark.dev
+
+**Sniff traffic inside a pod and output to stdout**
+```sh
+kubectl sniff <POD NAME> --image docker.io/nicolaka/netshoot -p -o - | tshark -r -
+```
